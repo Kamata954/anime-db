@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #131720;
+    font-family: sans-serif;
+}
+
+h3{
+    color: white;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.top-nav{
+    overflow: hidden;
+    background-color: #131720;
+    padding: 10px;
+}
+
+.top-nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.top-nav .search-container{
+    float: right;
+}
+
+form{
+    background-color: #151f30;
+    width: 300px;
+    height: 43px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    all: unset;
+    font: 15px system-ui;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 6px 9px;
+}
+
+.thumbnail {
+    height: 350px;
+    width: 250px;
+    border-radius: 19px;
+    margin-top: 14px;
+}
+
+.column {
+    width: 100%;
+    padding: 10px;
+    overflow: auto;
+}
+
+.card{
+    border-radius: 19px;
+    padding: 15px;
+    text-align: center;
+    background-color: #151f30;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: 2px solid white;
+    transition: all 0.3s linear;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+}
+
+.row {
+    height: 100%;
+    width: 22%;
+    min-width: 300px;
+    padding: 25px 0;
+}
+
+section {
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.modal {
+    background-color: #151f30;
+    width: 60%;
+    height: 70vh;
+    padding: 20px 30px;
+    color: white;
+    border: 0;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    border-radius: 15px;
+}
+
+.modal::backdrop {
+    background: black;
+    opacity: .4;
+}
+
+.d-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.d-body {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.d-img {
+    display: block;
+    height: 380px;
+    width: auto;
+    max-width: 50%;
+    margin-right: 60px;
+}
+
+.button {
+    padding: 10px 10px;
+    border: none;
+    background-color: #151f30;
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
