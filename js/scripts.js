@@ -5,9 +5,6 @@ const main = document.getElementById("section")
 const form = document.getElementById("form")
 const search = document.getElementById("query")
 
-// const openModal = document.querySelector(".card")
-// const closeModal = document.querySelector(".close")
-// const modal = document.querySelector(".modal")
 
 function openModal (clickedId){
     document.querySelector(`#m${clickedId}`).showModal()
@@ -22,14 +19,10 @@ function closeModal (clickedId) {
     document.querySelector(`#m${id}`).close()
 }
 
-// openModal.addEventListener("click", () =>{
-//     modal.showModal()
+// document.querySelector(".card").addEventListener("click", () =>{
+//     document.querySelector(".modal").showModal()
 // })
 
-
-// closeModal.addEventListener("click", () => {
-//     modal.close()
-// })
 
 getMovies(apiLink)
 
@@ -99,19 +92,36 @@ function getMovies(url){
 
                 const modalDesc = document.createElement("p")
 
+                const modalTrailer = document.createElement("div")
+                modalTrailer.setAttribute("class", "d-trailer")
+
+                const modalIframe = document.createElement("iframe")
+
+                let youtubeId = element.trailer.youtube_id
+                let youtubeUrl = `https://www.youtube.com/embed/${youtubeId}?enablejsapi=1&wmode=opaque`
+
+
                 //add content for modal
                 modalTitle.innerHTML = `${element.title}`
                 modalImage.src = element.images.jpg.large_image_url
                 modalDesc.innerHTML = `${element.synopsis}`
                 modalButton.innerHTML = "Close"
+                if(youtubeUrl){
+                    modalIframe.src = youtubeUrl
+                }
 
                 //append modals
                 modalNav.appendChild(modalTitle)
                 modalNav.appendChild(modalButton)
+
                 modalBody.appendChild(modalImage)
                 modalBody.appendChild(modalDesc)
+
+                modalTrailer.appendChild(modalIframe)
+
                 modalRow.appendChild(modalNav)
                 modalRow.appendChild(modalBody)
+                modalRow.appendChild(modalTrailer)
 
                 main.appendChild(modalRow)
 
