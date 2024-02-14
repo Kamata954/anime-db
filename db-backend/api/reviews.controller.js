@@ -3,7 +3,7 @@ import ReviewsDAO from "../dao/reviewsDAO.js"
 export default class ReviewsController {
     static async apiPostReview(req, res, next) {
         try {
-            const movieId = req.body.movieId
+            const movieId = parseInt(req.body.movieId)
             const review = req.body.review
             const user = req.body.user
 
@@ -50,7 +50,7 @@ export default class ReviewsController {
                 res.status(400).json({ error })
             }
 
-            if (reviewReponse.modifiedCount === 0) {
+            if (reviewResponse.modifiedCount === 0) {
                 throw new Error(
                     "unable to update review",
                 )
