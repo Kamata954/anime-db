@@ -24,9 +24,9 @@ function closeModal (clickedId) {
 // })
 
 
-getMovies(apiLink)
+getAnime(apiLink)
 
-function getMovies(url){
+function getAnime(url){
     fetch(url)
         .then(res => res.json() )
         .then(data => {
@@ -41,8 +41,6 @@ function getMovies(url){
                 //create cards
                 const divCard = document.createElement('div')
                 divCard.setAttribute("class","card")
-                divCard.setAttribute("id",id)
-                divCard.setAttribute("onClick","openModal(this.id)")
 
                 const divRow = document.createElement('div')
                 divRow.setAttribute("class", "row")
@@ -52,12 +50,14 @@ function getMovies(url){
 
                 const image = document.createElement('img')
                 image.setAttribute("class","center thumbnail")
+                image.setAttribute("id",id)
+                image.setAttribute("onClick","openModal(this.id)")
 
 
                 const title = document.createElement('h3')
 
                 //add content for card
-                title.innerHTML = `${element.title}`
+                title.innerHTML = `${element.title}<a href="anime.html?id=${element.mal_id}&title=${element.title}">View Reviews</a>`
                 image.src = element.images.jpg.large_image_url
                 console.log(image.src)
 
@@ -138,6 +138,6 @@ form.addEventListener("submit", (e) => {
     const searchItem = search.value
 
     if(searchItem){
-        getMovies(searchApi + searchItem)
+        getAnime(searchApi + searchItem)
     }
 })
