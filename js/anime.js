@@ -3,7 +3,7 @@ const animeId = url.searchParams.get("id")
 const animeTitle = url.searchParams.get("title")
 console.log(url)
 
-const apiLink = "http://localhost:8000/api/v1/reviews/"
+const apiLink = "anime-db-api.vercel.app/api/v1/reviews/"
 
 const main = document.getElementById("section")
 const title = document.getElementById("title")
